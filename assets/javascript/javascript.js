@@ -2,6 +2,9 @@
 // Button array
 var topics = ["Panda", "Dog", "Guinea Pig", "Penguin", "Dolphin", "Dinosaur", "Bunny", "Flamingo"];
 // Function to add additional buttons to array
+function displayAnimalGifs (){
+    
+}
 // Gif URL
 // Gif parameters
 // Function to pause Gif
