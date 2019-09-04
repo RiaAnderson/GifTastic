@@ -35,7 +35,7 @@ function displayAnimalGifs (){
 // Function to render animla buttons
 function renderButtons(){
     $("#buttons-view").empty();
-    for (var i =0; i <movies.length;i++){
+    for (var i = 0; i <topics.length;i++){
         var a = $("<button>");
         a.addClass("animal-btn");
         a.attr("data-name", topics[i]);
@@ -44,5 +44,13 @@ function renderButtons(){
     }
 }
 
+$("#add-animal").on("click", function(event){
+    event.preventDefault();
+    var animal = $("#animal-imput").val().trim();
+        topics.push(animal);
+        renderButtons();
+});
 // Gif parameters
 // Function to pause Gif
+
+renderButtons();
