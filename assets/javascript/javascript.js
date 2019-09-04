@@ -5,7 +5,7 @@ function displayAnimalGifs() {
     var animal = $(this).attr("data-name");
 
     // Gif URL
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=10&rating=G&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=10&rating=G&api_key=EzZE3a9LuH9LBpzzY256irSV5KOIEUWk";
     //EzZE3a9LuH9LBpzzY256irSV5KOIEUWk
 
     //AJAX call for specific animal button being clicked
