@@ -26,19 +26,37 @@ function displayAnimalGifs() {
                 var p = $("<p>").text("Rating: " + rating);
                 var animalImage = $("<img>");
                 animalImage.attr("src", results[i].images.fixed_height.url);
+                // animalImage.bind("click", function(){
+                //     playPause(this);
+                // })
+                animalImage.click(function(){
+                    console.log(this);
+                    var state = $(this).attr("data-state");
+
+                    // var state = this.getAttribute("data-state"); //.attr("data-state");
+                    console.log(state);
+                    if (state === "still") {
+                        $(this).attr("src", $(this).attr("data-animate"));
+                        $(this).attr("data-state", "animate");
+                    } else {
+                    var state = $(this).attr("data-state");
+                        $(this).attr("src", $(this).attr("data-still"));
+                        $(this).attr("data-state", "still");
+                    }
+                })
                 gifDiv.append(p);
                 gifDiv.append(animalImage);
                 $("#gif-view").prepend(gifDiv);
 
-                var state = $(this).attr("data-state");
+                // var state = $(this).attr("data-state");
 
-                if (state === "still") {
-                    $(this).attr("src", $(this).attr("data-animate"));
-                    $(this).attr("data-state", "animate");
-                } else {
-                    $(this).attr("src", $(this).attr("data-still"));
-                    $(this).attr("data-state", "still");
-                }
+                // if (state === "still") {
+                //     $(this).attr("src", $(this).attr("data-animate"));
+                //     $(this).attr("data-state", "animate");
+                // } else {
+                //     $(this).attr("src", $(this).attr("data-still"));
+                //     $(this).attr("data-state", "still");
+                // }
 
             }
         });
@@ -69,3 +87,23 @@ $(document).on("click", ".animal-btn", displayAnimalGifs);
 
 // Calls the renderButtons function to display the buttons
 renderButtons();
+
+
+// $(document).on("click", "img", playPause());
+// $("img").on("click", function(){
+//     console.log("I BEEN CLICKED")
+// })
+
+function playPause (animalImage){
+    console.log("clicked playpause");
+    var state = $(animalImage).attr("data-state");
+    console.log((animalImage.data-state).toString())
+    if (state === "still") {
+        $(animalImage).attr("src", $(animalImage).attr("data-animate"));
+        $(animalImage).attr("data-state", "animate");
+    } else {
+        $(animalImage).attr("src", $(animalImage).attr("data-still"));
+        $(animalImage).attr("data-state", "still");
+    }
+
+}
